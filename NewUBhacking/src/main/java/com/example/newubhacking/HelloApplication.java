@@ -9,10 +9,12 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.sql.*;
+import java.util.Objects;
 
 public class HelloApplication extends Application {
     @FXML private TextField username;
@@ -26,6 +28,18 @@ public class HelloApplication extends Application {
         Scene scene = new Scene(fxmlLoader.load(), 320, 240);
         initializeDB();
         stage.setTitle("Hello!");
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public void changeScene(String fxml, Button button) throws IOException {
+        Stage stage = (Stage) button.getScene().getWindow();
+        stage.close();
+        PageInfo pageInfo = new PageInfo();
+
+        Pane pane = null;
+        pane = FXMLLoader.load(Objects.requireNonNull(getClass().getResource(fxml)));
+        Scene scene = new Scene(pane);
         stage.setScene(scene);
         stage.show();
     }
@@ -72,6 +86,13 @@ public class HelloApplication extends Application {
         } catch (ClassNotFoundException e) {
             throw new RuntimeException(e);
         }
+    }
+    @FXML private javafx.scene.control.Button createAccount;
+    public void pressCreateAccount(ActionEvent actionEvent) throws IOException {
+        actionEvent.consume();
+
+        Button button = createAccount;
+        changeScene("Create account.fxml", button);
     }
 
     public static void main(String[] args) {

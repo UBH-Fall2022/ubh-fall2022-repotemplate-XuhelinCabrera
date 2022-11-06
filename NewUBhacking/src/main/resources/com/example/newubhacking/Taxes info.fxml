@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="339.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="339.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.newubhacking.Controller">
    <center>
       <AnchorPane prefHeight="333.0" prefWidth="596.0" BorderPane.alignment="CENTER">
          <children>
@@ -17,7 +17,7 @@
                </image>
             </ImageView>
             <Text layoutX="62.0" layoutY="252.0" strokeType="OUTSIDE" strokeWidth="0.0" text="                                                   " />
-            <Button layoutX="79.0" layoutY="235.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="120.0" style="-fx-background-color: eeeee4;" text="Find out more here" />
+            <Button fx:id="taxInfo" onAction="#pressTaxInfo" layoutX="79.0" layoutY="235.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="120.0" style="-fx-background-color: eeeee4;" text="Find out more here" />
          </children>
       </AnchorPane>
    </center>

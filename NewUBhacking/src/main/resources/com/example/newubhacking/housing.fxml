@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.BorderPane?>
 
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="297.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="297.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.newubhacking.Controller">
    <center>
       <AnchorPane prefHeight="316.0" prefWidth="605.0" BorderPane.alignment="CENTER">
          <children>
@@ -16,8 +16,8 @@
                   <Image url="@../../../txt.png" />
                </image>
             </ImageView>
-            <Button layoutX="83.0" layoutY="66.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="133.0" style="-fx-background-color: b4b4ac;" text="Renting? Click here." />
-            <Button layoutX="362.0" layoutY="66.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="128.0" style="-fx-background-color: b4b4ac;" text="Buying? Click here." />
+            <Button fx:id="housingRent" onAction="#pressHousingRent" layoutX="83.0" layoutY="66.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="133.0" style="-fx-background-color: b4b4ac;" text="Renting? Click here." />
+            <Button fx:id="housingBuy" layoutX="362.0" layoutY="66.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="128.0" style="-fx-background-color: b4b4ac;" text="Buying? Click here." />
          </children>
       </AnchorPane>
    </center>

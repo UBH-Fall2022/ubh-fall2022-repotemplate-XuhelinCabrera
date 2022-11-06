@@ -6,13 +6,13 @@
 <?import javafx.scene.layout.VBox?>
 
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.newubhacking.Controller">
    <center>
       <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
          <children>
             <AnchorPane prefHeight="396.0" prefWidth="600.0">
                <children>
-                  <Button layoutX="70.0" layoutY="47.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="459.0" text="Citizen" />
+                  <Button fx:id="citizen" onAction="#pressCitizen" layoutX="70.0" layoutY="47.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="459.0" text="Citizen" />
                   <Button layoutX="70.0" layoutY="146.0" mnemonicParsing="false" prefHeight="89.0" prefWidth="459.0" text="Permanent resident" />
                   <Button layoutX="70.0" layoutY="256.0" mnemonicParsing="false" prefHeight="89.0" prefWidth="459.0" text="Undocumented" />
                </children>

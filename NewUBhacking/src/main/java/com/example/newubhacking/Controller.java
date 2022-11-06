@@ -16,7 +16,7 @@ import java.util.Objects;
 
 public class Controller {
 
-    private PageInfo pageInfo = new PageInfo();
+    public PageInfo pageInfo = new PageInfo();
 
     @FXML private javafx.scene.control.Button finAid;
     @FXML private javafx.scene.control.Button banking;
@@ -24,9 +24,12 @@ public class Controller {
     @FXML private javafx.scene.control.Button investment;
     @FXML private javafx.scene.control.Button taxes;
     @FXML private javafx.scene.control.Button housing;
+    @FXML private javafx.scene.control.Button taxInfo;
+    @FXML private javafx.scene.control.Button housingRent;
     public void changeScene(String fxml, Button button) throws IOException {
         Stage stage = (Stage) button.getScene().getWindow();
         stage.close();
+        PageInfo pageInfo = new PageInfo();
 
         Pane pane = null;
         pane = FXMLLoader.load(Objects.requireNonNull(getClass().getResource(fxml)));
@@ -37,16 +40,16 @@ public class Controller {
     public void pressFinAid(ActionEvent actionEvent) throws IOException {
         actionEvent.consume();
 
-        PageInfo pageInfo = new PageInfo();
-        pageInfo.category = 1;
+        //PageInfo pageInfo = new PageInfo();
+        pageInfo.setCategory(1);
         Button button = finAid;
         changeScene("Questionnaire.fxml", button);
     }
     public void pressBanking(ActionEvent actionEvent) throws IOException {
         actionEvent.consume();
 
-        PageInfo pageInfo = new PageInfo();
-        pageInfo.category = 2;
+        //PageInfo pageInfo = new PageInfo();
+        pageInfo.setCategory(2);
         Button button = banking;
         changeScene("Questionnaire.fxml", button);
 
@@ -54,33 +57,55 @@ public class Controller {
     public void pressSavings(ActionEvent actionEvent) throws IOException {
         actionEvent.consume();
 
-        PageInfo pageInfo = new PageInfo();
-        pageInfo.category = 3;
+        //PageInfo pageInfo = new PageInfo();
+        pageInfo.setCategory(3);
         Button button = savings;
         changeScene("Questionnaire.fxml", button);
     }
     public void pressInvestment(ActionEvent actionEvent) throws IOException {
         actionEvent.consume();
 
-        PageInfo pageInfo = new PageInfo();
-        pageInfo.category = 4;
+        //PageInfo pageInfo = new PageInfo();
+        pageInfo.setCategory(4);
         Button button = investment;
         changeScene("Questionnaire.fxml", button);
     }
     public void pressTaxes(ActionEvent actionEvent) throws IOException {
         actionEvent.consume();
 
-        PageInfo pageInfo = new PageInfo();
-        pageInfo.category = 5;
+        //PageInfo pageInfo = new PageInfo();
+        pageInfo.setCategory(5);
         Button button = taxes;
-        changeScene("Questionnaire.fxml", button);
+        changeScene("Taxes info.fxml", button);
     }
     public void pressHousing(ActionEvent actionEvent) throws IOException {
         actionEvent.consume();
 
-        PageInfo pageInfo = new PageInfo();
-        pageInfo.category = 6;
+        //PageInfo pageInfo = new PageInfo();
+        pageInfo.setCategory(6);
         Button button = housing;
-        changeScene("Questionnaire.fxml", button);
+        changeScene("housing.fxml", button);
     }
+
+    public void pressCitizen(ActionEvent actionEvent) throws IOException {
+        actionEvent.consume();
+
+        System.out.println(this.pageInfo.getCategory());
+    }
+
+    public void pressTaxInfo(ActionEvent actionEvent) throws IOException {
+        actionEvent.consume();
+
+        Button button = taxInfo;
+        changeScene("Taxes deadline.fxml", button);
+    }
+
+    public void pressHousingRent(ActionEvent actionEvent) throws IOException {
+        actionEvent.consume();
+
+        Button button = housingRent;
+        changeScene("housingp2.fxml", button);
+    }
+
+
 }
