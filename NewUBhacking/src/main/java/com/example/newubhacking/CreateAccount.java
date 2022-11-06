@@ -8,10 +8,12 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.sql.*;
+import java.util.Objects;
 
 import static javafx.application.Application.launch;
 
@@ -21,7 +23,19 @@ public class CreateAccount extends Application {
     @FXML private PasswordField password;
     @FXML private Label incorrectL;
     @FXML private Button Login;
+    @FXML private Button enter;
     private Statement stmt;
+    public void changeScene(String fxml, Button button) throws IOException {
+        Stage stage = (Stage) button.getScene().getWindow();
+        stage.close();
+        PageInfo pageInfo = new PageInfo();
+
+        Pane pane = null;
+        pane = FXMLLoader.load(Objects.requireNonNull(getClass().getResource(fxml)));
+        Scene scene = new Scene(pane);
+        stage.setScene(scene);
+        stage.show();
+    }
     public void start(Stage stage) throws IOException {
         initializeDB();
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Create account.fxml"));
@@ -33,7 +47,7 @@ public class CreateAccount extends Application {
     }
 
     @FXML
-    public void aut() {
+    public void aut() throws IOException {
 
         String query = "SELECT username FROM users WHERE username=" +"\""+usernames.getText()+"\""+";";  //get username
         Statement stmt = null;
@@ -51,6 +65,8 @@ public class CreateAccount extends Application {
                                 email.getText().trim()  +
                                   "');";
                 stmt.execute(insertStmt);
+                Button button = enter;
+                changeScene("hello-view.fxml", button);
 
             }else{
                 incorrectL.setText("Username exists!!");
