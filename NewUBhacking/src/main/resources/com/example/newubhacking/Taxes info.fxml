@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Text?>
+
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="339.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+   <center>
+      <AnchorPane prefHeight="333.0" prefWidth="596.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="358.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Things%20you%20need%20to%20know%20about%20your%20taxes.png" />
+               </image>
+            </ImageView>
+            <Text layoutX="62.0" layoutY="252.0" strokeType="OUTSIDE" strokeWidth="0.0" text="                                                   " />
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>
