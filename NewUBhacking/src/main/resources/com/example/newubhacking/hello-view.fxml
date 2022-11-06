@@ -15,6 +15,6 @@
       <Text layoutX="207.0" layoutY="132.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome to something catchy!" />
       <Text fill="RED" layoutX="199.0" layoutY="310.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-underline: text;" />
       <Label id="incorrectL" fx:id="incorrectL" layoutX="213.0" layoutY="147.0" />
-      <Button id="createAccount" onAction="#pressCreateAccount" layoutX="191.0" layoutY="292.0" mnemonicParsing="false" text="Don't have an account? Click here." textFill="#f80000" />
+      <Button fx:id="createAccount" onAction="#pressCreateAccount" layoutX="191.0" layoutY="292.0" mnemonicParsing="false" text="Don't have an account? Click here." textFill="#f80000" />
     </children>
 </AnchorPane>
