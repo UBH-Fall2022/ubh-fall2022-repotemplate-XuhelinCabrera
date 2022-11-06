@@ -29,4 +29,29 @@ public class Homepage extends Application {
         actionEvent.consume();
         System.out.println("Hello, World!");
     }
+
+    public void pressFinAid(ActionEvent actionEvent) {
+        actionEvent.consume();
+        System.out.println ("FinAid");
+    }
+    public void pressBanking(ActionEvent actionEvent) {
+        actionEvent.consume();
+        System.out.println ("Banking");
+    }
+    public void pressSavings(ActionEvent actionEvent) {
+        actionEvent.consume();
+        System.out.println ("Savings");
+    }
+    public void pressInvestment(ActionEvent actionEvent) {
+        actionEvent.consume();
+        System.out.println ("Investment");
+    }
+    public void pressTaxes(ActionEvent actionEvent) {
+        actionEvent.consume();
+        System.out.println ("Taxes");
+    }
+    public void pressHousing(ActionEvent actionEvent) {
+        actionEvent.consume();
+        System.out.println ("Housing");
+    }
 }
