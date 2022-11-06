@@ -1,7 +1,6 @@
 package com.example.newubhacking;
 
 import javafx.application.Application;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -14,15 +13,17 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.sql.*;
 
-public class HelloApplication extends Application {
+import static javafx.application.Application.launch;
+
+public class CreateAccount extends Application {
     @FXML private TextField username;
+    @FXML private TextField email;
     @FXML private PasswordField password;
     @FXML private Label incorrectL;
     @FXML private Button Login;
     private Statement stmt;
-    @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Create account.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 320, 240);
         initializeDB();
         stage.setTitle("Hello!");
@@ -38,15 +39,25 @@ public class HelloApplication extends Application {
     public void aut() {
         String userN = User();
 
-        String q = "SELECT * FROM test WHERE user='" + userN + "' AND Password ='" + password.getText() + "'";
+        String q = "SELECT user FROM test WHERE user'" + userN + "'";
 
         try{
             ResultSet rs = stmt.executeQuery(q);
-            if(!rs.next()){
-                incorrectL.setText("Invalid username or password");
+            if(rs!= null){
+                String insertStmt =
+                        "INSERT INTO test(user,Password,emailS" +
+                                ") VALUES('" +
+                                username.getText().trim() + "','" +
+                                password.getText().trim() + "','" +
+                                email.getText().trim() + "','" +
+                                  "');";
+                stmt.execute(insertStmt);
+
             }else{
-                //in here open next page
+                incorrectL.setText("Username exists!!");
             }
+
+
 
         } catch (SQLException e) {
             System.out.println("no");

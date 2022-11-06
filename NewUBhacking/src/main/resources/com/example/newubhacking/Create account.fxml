@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.newubhacking.CreateAccount">
+   <children>
+      <TextField layoutX="196.0" layoutY="122.0" promptText="Username" />
+      <TextField layoutX="196.0" layoutY="207.0" promptText="Email" />
+      <Button layoutX="224.0" layoutY="252.0" mnemonicParsing="false" text="create account" />
+      <PasswordField layoutX="196.0" layoutY="163.0" promptText="Password" />
+   </children>
+</AnchorPane>
