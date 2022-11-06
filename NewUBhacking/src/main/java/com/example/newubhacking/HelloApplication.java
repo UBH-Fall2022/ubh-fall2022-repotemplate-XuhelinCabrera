@@ -36,11 +36,14 @@ public class HelloApplication extends Application {
     }
     @FXML
     public void aut() {
-        String userN = User();
 
-        String q = "SELECT * FROM test WHERE user='" + userN + "' AND Password ='" + password.getText() + "'";
+        String q = "SELECT * FROM users WHERE username='" + username.getText() + "' AND password ='" + password.getText() + "'";
+        Statement stmt = null;
 
         try{
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/usersdb", "root","Itawtaw26");
+            stmt = conn.createStatement();
             ResultSet rs = stmt.executeQuery(q);
             if(!rs.next()){
                 incorrectL.setText("Invalid username or password");
@@ -51,6 +54,8 @@ public class HelloApplication extends Application {
         } catch (SQLException e) {
             System.out.println("no");
 
+            throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
             throw new RuntimeException(e);
         }
     }

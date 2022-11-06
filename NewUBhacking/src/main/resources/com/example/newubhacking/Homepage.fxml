@@ -3,13 +3,13 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" fx:controller="com.example.newubhacking.Homepage" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.newubhacking.Homepage">
    <children>
       <Button fx:id="finAid" layoutX="14.0" layoutY="48.0" mnemonicParsing="false" onAction="#pressFinAid" prefHeight="146.0" prefWidth="181.0" text="College Financial Aid" />
       <Button fx:id="banking" layoutX="209.0" layoutY="48.0" mnemonicParsing="false" onAction="#pressBanking" prefHeight="146.0" prefWidth="181.0" text="Banking" />
       <Button fx:id="savings" layoutX="14.0" layoutY="208.0" mnemonicParsing="false" onAction="#pressSavings" prefHeight="146.0" prefWidth="181.0" text="Savings" />
       <Button fx:id="investment" layoutX="209.0" layoutY="208.0" mnemonicParsing="false" onAction="#pressInvestment" prefHeight="146.0" prefWidth="181.0" text="Investment" />
-      <Button fx:id="taxes" layoutX="404.0" layoutY="48.0" mnemonicParsing="false" onAction="#pressTaxes" prefHeight="146.0" prefWidth="181.0" text="Taxes" />
+      <Button fx:id="taxes" layoutX="404.0" layoutY="48.0" mnemonicParsing="false" onAction="#pressTaxes" prefHeight="146.0" prefWidth="181.0" style= "-fx-background-image: url('Taxes logo.png')" text="Taxes" />
       <Button fx:id="housing" layoutX="404.0" layoutY="208.0" mnemonicParsing="false" onAction="#pressHousing" prefHeight="146.0" prefWidth="181.0" text="Housing/rent/bills" />
    </children>
 </AnchorPane>

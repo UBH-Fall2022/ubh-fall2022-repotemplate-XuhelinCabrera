@@ -16,40 +16,39 @@ import java.sql.*;
 import static javafx.application.Application.launch;
 
 public class CreateAccount extends Application {
-    @FXML private TextField username;
+    @FXML private TextField usernames;
     @FXML private TextField email;
     @FXML private PasswordField password;
     @FXML private Label incorrectL;
     @FXML private Button Login;
     private Statement stmt;
     public void start(Stage stage) throws IOException {
+        initializeDB();
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Create account.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 320, 240);
-        initializeDB();
+
         stage.setTitle("Hello!");
         stage.setScene(scene);
         stage.show();
     }
-    @FXML
-    public String User(){
-        String userN = username.getText();
-        return userN;
-    }
+
     @FXML
     public void aut() {
-        String userN = User();
 
-        String q = "SELECT user FROM test WHERE user'" + userN + "'";
-
+        String query = "SELECT username FROM users WHERE username=" +"\""+usernames.getText()+"\""+";";  //get username
+        Statement stmt = null;
         try{
-            ResultSet rs = stmt.executeQuery(q);
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/usersdb", "root","Itawtaw26");
+            stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery(query);
             if(rs!= null){
                 String insertStmt =
-                        "INSERT INTO test(user,Password,emailS" +
+                        "INSERT INTO users(username,password,email" +
                                 ") VALUES('" +
-                                username.getText().trim() + "','" +
+                                usernames.getText().trim() + "','" +
                                 password.getText().trim() + "','" +
-                                email.getText().trim() + "','" +
+                                email.getText().trim()  +
                                   "');";
                 stmt.execute(insertStmt);
 
@@ -57,11 +56,11 @@ public class CreateAccount extends Application {
                 incorrectL.setText("Username exists!!");
             }
 
-
-
         } catch (SQLException e) {
             System.out.println("no");
 
+            throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
             throw new RuntimeException(e);
         }
     }

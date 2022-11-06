@@ -8,9 +8,9 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.newubhacking.CreateAccount">
    <children>
-      <TextField layoutX="196.0" layoutY="122.0" promptText="Username" />
-      <TextField layoutX="196.0" layoutY="207.0" promptText="Email" />
-      <Button layoutX="224.0" layoutY="252.0" mnemonicParsing="false" text="create account" />
-      <PasswordField layoutX="196.0" layoutY="163.0" promptText="Password" />
+      <TextField id="usernames" fx:id="usernames" layoutX="196.0" layoutY="122.0" promptText="Username" />
+      <TextField id="email" fx:id="email" layoutX="196.0" layoutY="207.0" promptText="Email" />
+      <Button id="enter" fx:id="enter" onAction="#aut" layoutX="224.0" layoutY="252.0" mnemonicParsing="false" text="create account" />
+      <PasswordField id="password" fx:id="password" layoutX="196.0" layoutY="163.0" promptText="Password" />
    </children>
 </AnchorPane>
