@@ -21,6 +21,7 @@ public class HelloApplication extends Application {
     @FXML private PasswordField password;
     @FXML private Label incorrectL;
     @FXML private Button Login;
+    @FXML private javafx.scene.control.Button createAccount;
     private Statement stmt;
     @Override
     public void start(Stage stage) throws IOException {
@@ -49,7 +50,7 @@ public class HelloApplication extends Application {
         return userN;
     }
     @FXML
-    public void aut() {
+    public void aut() throws IOException {
 
         String q = "SELECT * FROM users WHERE username='" + username.getText() + "' AND password ='" + password.getText() + "'";
         Statement stmt = null;
@@ -62,7 +63,8 @@ public class HelloApplication extends Application {
             if(!rs.next()){
                 incorrectL.setText("Invalid username or password");
             }else{
-                //in here open next page
+                Button button = Login;
+                changeScene("Homepage.fxml", button);
             }
 
         } catch (SQLException e) {
@@ -87,7 +89,7 @@ public class HelloApplication extends Application {
             throw new RuntimeException(e);
         }
     }
-    @FXML private javafx.scene.control.Button createAccount;
+
     public void pressCreateAccount(ActionEvent actionEvent) throws IOException {
         actionEvent.consume();
 
